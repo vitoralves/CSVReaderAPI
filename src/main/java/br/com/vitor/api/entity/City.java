@@ -19,8 +19,7 @@ public class City implements Serializable{
 	private static final long serialVersionUID = -4290327038487447875L;
 	
 	@Id()
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ibge_id")
+	@Column(name = "ibge_id", unique = true)
 	private Long ibgeId;
 	@Column()
 	private String uf;

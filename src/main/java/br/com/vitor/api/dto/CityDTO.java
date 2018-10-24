@@ -3,8 +3,11 @@ package br.com.vitor.api.dto;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
 
 public class CityDTO {
+	@NotEmpty(message = "Ibgeid can't be empty")
+	@UniqueElements(message = "ibgeid need to be unique")
 	private Long ibgeId;
 	@NotEmpty(message = "uf can't be empty")
 	@Length(max = 2, message = "uf max size is 2")

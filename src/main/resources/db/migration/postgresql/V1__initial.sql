@@ -1,5 +1,5 @@
 create table city(
-ibge_id serial,
+ibge_id integer unique,
 uf varchar(2),
 name varchar(100),
 capital boolean,
