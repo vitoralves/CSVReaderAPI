@@ -1,13 +1,12 @@
 package br.com.vitor.api.dto;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.UniqueElements;
 
 public class CityDTO {
-	@NotEmpty(message = "Ibgeid can't be empty")
-	@UniqueElements(message = "ibgeid need to be unique")
+	@NotNull(message = "Ibgeid can't be empty")
 	private Long ibgeId;
 	@NotEmpty(message = "uf can't be empty")
 	@Length(max = 2, message = "uf max size is 2")
@@ -23,7 +22,7 @@ public class CityDTO {
 	@Length(max = 20, message = "latitude max size is 20")
 	private String lat;
 	@NotEmpty(message = "no accents can't be empty")
-	@Length(max = 2, message = "no accents max size is 100")
+	@Length(max = 100, message = "no accents max size is 100")
 	private String noAccents;
 	private String alternativeNames;
 	@NotEmpty(message = "micro region can't be empty")
