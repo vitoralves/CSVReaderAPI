@@ -2,10 +2,13 @@ package br.com.vitor.api.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import br.com.vitor.api.entity.City;
 
 public interface CityService {
+	
+	public List<City> findAll();
 	
 	public List<City> saveAll(List<City> cities);
 	
@@ -23,9 +26,11 @@ public interface CityService {
 	
 	void deleteById(Long id);
 	
-	public Integer countDistinctByColName(String col);
+//	public List<City> countDistinctByColName(String col);
 	
 	public Long count();
 	
-	public Long teste();
+	public List<Object[]> minMaxCitiesByState();
+	
+	List<City> findByUfIn(Set<String> states);
 }
